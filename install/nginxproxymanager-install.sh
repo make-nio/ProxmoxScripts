@@ -3,7 +3,7 @@
 # Copyright (c) 2021-2023 tteck
 # Author: tteck (tteckster)
 # License: MIT
-# https://github.com/tteck/Proxmox/raw/main/LICENSE
+# https://github.com/make-nio/ProxmoxScripts/raw/main/LICENSE
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
@@ -54,7 +54,8 @@ msg_ok "Installed Openresty"
 
 msg_info "Installing Node.js"
 $STD bash <(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh)
-. ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 $STD nvm install 16.20.1
 ln -sf /root/.nvm/versions/node/v16.20.1/bin/node /usr/bin/node
 msg_ok "Installed Node.js"
