@@ -1,0 +1,30 @@
+name: Problems with a script.
+description: Generate a report on the issue pertaining specifically to the script in order to aid us in improving it.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **IMPORTANT:** Failure to comply with the following guidelines may result in immediate closure.
+        - Prior to submitting, kindly search the closed issues to check if the problem you are reporting has already been addressed and resolved. If you come across a closed issue that pertains to your problem, please leave a comment on that issue instead of creating a new one.
+        - Changing Linux distributions without confirming the proper functioning of default settings.
+        - When encountering the error message `[ERROR] in line 24: exit code *: while executing command "$@" > /dev/null 2>&1`, make sure to run the script in verbose mode to accurately determine the underlying issue.
+        - For suggestions, questions or feature/script requests, please share them in the [Discussions section.](https://github.com/tteck/Proxmox/discussions)
+  - type: textarea
+    id: bug
+    attributes:
+      label: A clear and concise description of the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: If relevant, including screenshots or a code block can be helpful in clarifying the issue.
+    validations:
+      required: false
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Please provide detailed steps to reproduce the issue.
+      placeholder: First do this, then this ...
+    validations:
+      required: false
